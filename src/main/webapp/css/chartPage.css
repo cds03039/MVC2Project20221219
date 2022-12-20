@@ -1,0 +1,114 @@
+.bigWrapper{
+	width: 1200px;
+  	height: 100%;
+  	margin: 0 auto;
+  	
+  	
+}
+.side_fixed_div{
+	width: 200px;
+	height: 100vh;
+	float: right;
+	
+}
+
+.adminMain{
+	width:980px;
+	height: 100vh;
+	
+}
+
+.memberList{
+	margin-top : 100px;
+	text-align : center;
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.reportList{
+	margin-top : 100px;
+	text-align : center;
+	width: 100%;
+	border : 1px solid lightgray;
+	font-size: 12px;
+	line-height: 1.5;
+	
+	
+}
+.htr td{
+	text-align: center;
+	vertical-align : middle;
+}
+.htr th{
+	text-align: center;
+	vertical-align : middle;
+	font-size: 13px;
+	font-weight:bold;
+}
+.htr{
+	border : 1px solid lightgray;
+	height: 50px;
+	line-height: 1.5;
+	text-align: center;
+	vertical-align : middle;
+}
+
+
+
+
+
+
+.memberSerch{
+	float: right;
+	margin-top : 50px;
+	margin-right : 50px;
+}
+.save {
+	position: absolute;
+	bottom: 30px;
+	right: 50%;
+}
+.delete{
+	margin-left : 35px;
+	margin-top : 15px;
+}
+
+
+
+#memberListForm {
+	position : relative;
+	overflow : hidden;
+	width:980px;
+	height: 100%;
+	
+}
+#reportForm {
+	position : relative;
+	
+	width:980px;
+	height: 100%;
+	display: none;
+}
+
+
+#chart1 {
+	margin-top:150px;
+	width:980px;
+	height: 500px;
+	display: none;
+}
+#chart2 {
+	margin-top:150px;
+	width:980px;
+	height: 500px;
+	display: none;
+}
+h2{
+	color:red;
+	text-align : center;
+	font-size : 200px;
+	font-weight : bold;
+}
+

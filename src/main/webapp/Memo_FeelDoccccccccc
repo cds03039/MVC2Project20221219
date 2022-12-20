@@ -1,0 +1,63 @@
+/*
+프로젝트 파일 시작전 준비사항
+
+index.jsp 실행 후, server.xml 에서 
+<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" maxIdle="30" maxTotal="100" name="jdbc/orcl" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="scott"/>  
+추가.
+
+upload 파일 생성
+
+
+보드 테이블 : 
+
+CREATE table board(
+category VARCHAR2(20),
+nickname VARCHAR2(20) ,
+board_title VARCHAR2(100),
+board_number CHAR(5) PRIMARY key,
+board_date date,
+board_views CHAR(5),
+board_recommend  CHAR(5),
+board_content VARCHAR2(4000),
+PICTUREURL VARCHAR2(300)
+);
+
+회원 테이블 : 
+
+CREATE table users(
+EMAIL  VARCHAR2(70)  PRIMARY key,
+PASSWORD    VARCHAR2(70),
+NAME    VARCHAR2(20),
+PHONE   VARCHAR2(20),
+NICKNAME    VARCHAR2(50),
+JOINDATE    DATE,
+GRADE   NUMBER(1),
+EMAILHASH   VARCHAR2(100),
+EMAILCHECKED    NUMBER(1)
+);
+
+CREATE SEQUENCE board_seq
+       INCREMENT BY 1
+       START WITH 1
+       MINVALUE 1
+       MAXVALUE 9999
+       NOCYCLE
+       NOCACHE
+       NOORDER;
+       
+       
+회원 추가 (관리자):
+
+insert into users(NAME, PHONE, NICKNAME, GRADE,EMAIL,JOINDATE,PASSWORD,EMAILCHECKED)
+values('장승연','010-9036-1891','cds03039@naver.com',1,'cds03034@naver.com',sysdate,'1111',1);
+       
+
+
+
+
+
+
+
+
+
+*/
