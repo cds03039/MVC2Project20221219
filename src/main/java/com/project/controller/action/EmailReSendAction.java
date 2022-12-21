@@ -24,7 +24,7 @@ public class EmailReSendAction implements Action{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email = request.getParameter("email");
-		String host = "http://192.168.0.16:8080/projectTest/";
+		String host = "http://192.168.0.18:8080/MVC2Project20221219/";
 		String from = "ste348311@gmail.com";
 		String to = email;
 		UsersDAO dao = UsersDAO.getInstance();

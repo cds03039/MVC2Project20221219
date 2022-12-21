@@ -29,12 +29,14 @@ background-color: lightgray;
 	width: 1200px;
 	display: flow-root;
 	position: relative;
+	
 }
 
 .boardList_wrap .board_title {
 	position: relative;
 	width: 100%;
 	height: 100px;
+	background-color: white;
 }
 
 .boardList_wrap .board_title a {
@@ -56,14 +58,17 @@ background-color: lightgray;
 .boardList_wrap .board_list {
 	border-top: 0.5px solid lightgray;
 	width: 980px;
+	height : 1000px;
 	float: left;
 	margin-bottom: 10px;
+	background-color: white;
 }
 
 .boardList_wrap .side_fixed_div {
-	width: 200px;
+	width: 220px;
 	float: right;
 	height: 1000px;
+	background-color: white;
 }
 
 .boardList_wrap .board_list .list table {
@@ -161,8 +166,8 @@ background-color: lightgray;
 	margin-top: 10px;
 	width: 100%;
 	height: 50px;
-	border: 1px solid black;
-	background-color: yellow;
+	
+	background-color: white;
 	text-align: center;
 }
 </style>
@@ -202,19 +207,19 @@ background-color: lightgray;
 	<div class="boardList_wrap">
 	<div class="board_title">
       <c:if test="${param.category eq 'sports'}">
-         <a href="#"><i class="fa fa-futbol-o" aria-hidden="true"></i><span>${param.category}</span></a>
+         <a href="#"><i class="fa fa-futbol-o" aria-hidden="true"></i><span>운동게시판</span></a>
          </c:if>
          <c:if test="${param.category eq 'photo'}">
-      	   <a href="#"><i class="fa fa-camera" aria-hidden="true"></i><span>${param.category}</span></a>
+      	   <a href="#"><i class="fa fa-camera" aria-hidden="true"></i><span>사진게시판</span></a>
          </c:if>
          <c:if test="${param.category eq 'game'}">
-        	 <a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i><span>${param.category}</span></a>
+        	 <a href="#"><i class="fa fa-gamepad" aria-hidden="true"></i><span>게임게시판</span></a>
          </c:if>
          <c:if test="${param.category eq 'himedia'}">
-        	 <a href="#"><i class="fa fa-eercast" aria-hidden="true"></i><span>${param.category}</span></a>
+        	 <a href="#"><i class="fa fa-eercast" aria-hidden="true"></i><span>하이미디어게시판</span></a>
          </c:if>
          <c:if test="${param.category eq 'movie'}">
-        	 <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i><span>${param.category}</span></a>
+        	 <a href="#"><i class="fa fa-video-camera" aria-hidden="true"></i><span>영화게시판</span></a>
          </c:if>
       </div>
 		<div class="board_list">
@@ -337,6 +342,6 @@ background-color: lightgray;
 			<jsp:include page="sideBar.jsp" />
 		</div>
 	</div>
-
+<jsp:include page="footer.jsp" />
 </body>
 </html>

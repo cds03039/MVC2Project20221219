@@ -8,6 +8,35 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+function passOnContent(){
+	$('input[name=board_content]').attr('value',$('#editor').text());
+	
+	var v = grecaptcha.getResponse();
+	board_title = $("#board_title").val();
+	content = ('value',$('#editor').text());
+		
+	if(board_title == ""){
+		alert ("제목을 입력해주세요.");
+		return false;
+	}else if(content == ""){
+		alert ("내용을 입력해주세요.");
+		return false;
+	}else if (v.length == 0) {
+		alert ("'로봇이 아닙니다.'를 체크해주세요.");
+		
+		return false;
+	} else {
+		location.reload();
+		return true;
+	}
+	
+	
+}
+
+
+</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -25,7 +54,7 @@
 				<h3>게시판 : ${category }</h3>
 
 				<div class="title">
-					제목 : <input type="text" placeholder="제목 입력" class="titleText" name="board_title">
+					제목 : <input type="text" placeholder="제목 입력" class="titleText" name="board_title" id="board_title">
 				</div>
 				<div class="profile">
 					<span>작성자 : ${loginUser.nickname }</span>
@@ -63,16 +92,15 @@
 					<input id="img-selector" type="file" accept="image/*" type="button" name="pictureUrl">
 				</div>
 			</div>
-			<input type="hidden" name = "board_content" value="">
+			<input type="hidden" name = "board_content" value="" id="board_content">
 			<br>
 			<hr style="border: solid 1px lightgray;">
 			<br>
 			<div class="Box">
-				<img src="<%=request.getContextPath() %>/captcha" id="captchaImg"
-					alt="captcha img"> <input type="text"
-					placeholder="보안문자 입력후 글쓰기 가능" name="captcha" class="captchaText">
-				<a id="refreshBtn" onclick="imgRefresh()" class="refresh">새로고침</a> <input
-					type="submit" value="글쓰기" class="enter" onclick="passOnContent()">
+				<div class="g-recaptcha" data-sitekey="6LfkL5IjAAAAANhGsB5MpwXkvsmMaXUzUbTWqcdx" data-callback="recaptcha"></div>
+					
+					
+				 <input type="submit" value="글쓰기" class="enter" onclick="return passOnContent()" >
 			</div>
 			<br>
 			<br>
@@ -90,13 +118,11 @@
 	
 	
 	
-function imgRefresh(){
-    $("#captchaImg").attr("src","/project2/captcha?id="+Math.random()); 
-    
-}
-function passOnContent(){
-	$('input[name=board_content]').attr('value',$('#editor').text());
-}
+
+
+
+	
+
 
 
 const btnImage = document.getElementById('btn-image');
@@ -261,7 +287,7 @@ h3{
 }
 .titleText{
 width:825px;
-	height: 30px;
+	height: 40px;
   font-size: 15px;
   border: 0;
   border-radius: 15px;
@@ -290,6 +316,7 @@ width:825px;
 	margin: 0 auto;
 	text-align: center;
 	
+	
 }
 .captchaText{
 	position: absolute;
@@ -309,7 +336,8 @@ width:825px;
 	position: absolute;
 	top : 120px;
 	left: 50%;
-	transform : translateX(70%);
+	transform : translateX(-50%);
+	
 }
 .centerBtn{
 	margin-left : 30px;
@@ -375,6 +403,11 @@ transition: all 0.35s;
 .editor-menu button i{
 display: flex;
 
+}
+.g-recaptcha{
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
 }
 </style>
 </html>

@@ -16,7 +16,21 @@
 </div>
 <div class="postViewMain">
 	<div class="postHeader">
-	<h3>카테고리 : ${board.category }</h3><h2>글 제목 : ${board.board_title }</h2>
+	<c:if test="${board.category eq 'sports'}">
+	<h3><i class="fa fa-futbol-o" aria-hidden="true"></i>운동게시판</h3><h2>글 제목 : ${board.board_title }</h2>
+	</c:if>
+	<c:if test="${board.category eq 'photo'}">
+	<h3><i class="fa fa-camera" aria-hidden="true"></i>사진게시판</h3><h2>글 제목 : ${board.board_title }</h2>
+	</c:if>
+	<c:if test="${board.category eq 'game'}">
+	<h3><i class="fa fa-gamepad" aria-hidden="true"></i>게임게시판</h3><h2>글 제목 : ${board.board_title }</h2>
+	</c:if>
+	<c:if test="${board.category eq 'himedia'}">
+	<h3><i class="fa fa-eercast" aria-hidden="true"></i>하이미디어게시판</h3><h2>글 제목 : ${board.board_title }</h2>
+	</c:if>
+	<c:if test="${board.category eq 'movie'}">
+	<h3><i class="fa fa-video-camera" aria-hidden="true"></i>영화게시판</h3><h2>글 제목 : ${board.board_title }</h2>
+	</c:if>
 	</div>
 	<div class="profile"><a href="UserServlet?command=myPageForm&nickname=${board.nickname }"><span><i class="fa fa-user" aria-hidden="true"></i> ${board.nickname }</span></a><span><i class="fa fa-eye" aria-hidden="true"></i> ${board.board_views }</span><span><i class="fa fa-thumbs-up" aria-hidden="true"></i> ${board.board_recommend }</span>
 	<span class="siren">
@@ -101,7 +115,17 @@ background: lightgray;
 	
 }
 h2{
-	padding-top: 20px;
+	height: 40px;
+	background-color: rgb(233, 233, 233);
+	margin-top: 50px;
+	padding-left:30px;
+	border-radius: 15px;
+	line-height: 2.5;
+	font-weight:bold;
+}
+h3{
+font-size: 30px;
+font-weight:bold;
 }
 h4{
  	font-size:30px;

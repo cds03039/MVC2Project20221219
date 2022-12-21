@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>메인페이지</title>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <link rel="icon" href="images/logo.png">
 <body>
